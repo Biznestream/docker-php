@@ -1,0 +1,2 @@
+1. Build container `cd docker && docker build -t php-fpm .`
+2. Run docker `cd .. && docker-compose up`
