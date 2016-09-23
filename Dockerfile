@@ -1,4 +1,4 @@
-FROM php:5.6-fpm
+FROM php:7.0-apache
 RUN usermod -u 1000 www-data
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
