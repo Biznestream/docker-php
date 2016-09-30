@@ -1,5 +1,6 @@
 FROM php:5.6-apache
 RUN usermod -u 1000 www-data
+RUN a2enmod rewrite
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
