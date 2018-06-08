@@ -1,8 +1,5 @@
 FROM php:7.0-apache
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && apt-get -y install nodejs git
-RUN npm i -g gulp-cli bower
-
 RUN usermod -u 1000 www-data
 RUN a2enmod rewrite
 RUN apt-get update && apt-get install -y \
@@ -21,6 +18,9 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) intl \
     && docker-php-ext-install -j$(nproc) mbstring \
     && docker-php-ext-install -j$(nproc) exif
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && apt-get -y install nodejs git
+RUN npm i -g gulp-cli bower
 
 COPY ./extensions.ini /usr/local/etc/php/conf.d/extensions.ini
 
