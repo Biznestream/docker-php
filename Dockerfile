@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.1-apache
 
 RUN usermod -u 1000 www-data
 RUN a2enmod rewrite
